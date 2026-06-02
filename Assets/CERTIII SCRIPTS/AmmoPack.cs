@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class AmmoPack : MonoBehaviour
 {
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// 
-    /// Variable for the amount of ammo to add
+    public int AmmoCount
+
+    private void onTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player entered the trigger");
+        }
+        Debug.Log(other.gameObject.name);
+    }
     /// set up an OnTriggerEnter function
     /// check if the collider has the "Player" tag
     /// if it does access:
@@ -13,13 +20,11 @@ public class AmmoPack : MonoBehaviour
     /// 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
