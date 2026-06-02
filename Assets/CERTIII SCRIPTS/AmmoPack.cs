@@ -1,7 +1,7 @@
 using UnityEngine;
 
-// Ammo pickup - restores ammo to the player's equipped weapon on contact.
-// Requires a Trigger Collider on this GameObject.
+// Ammo pickup - Adds ammo to the player's equipped weapon on contact.
+
 public class AmmoPack : MonoBehaviour
 {
     // Amount of ammo to give the player on pickup
@@ -10,7 +10,7 @@ public class AmmoPack : MonoBehaviour
     // Triggers when player enters
     private void OnTriggerEnter(Collider other)
     {
-        // Only respond to the player
+        // Only respond to player tag
         if (other.CompareTag("Player"))
         {
             // Adds ammo to the player's equipped weapon
