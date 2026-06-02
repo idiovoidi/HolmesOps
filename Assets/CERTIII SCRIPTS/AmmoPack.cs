@@ -1,42 +1,24 @@
 using UnityEngine;
 
+// Ammo pickup - restores ammo to the player's equipped weapon on contact.
+// Requires a Trigger Collider on this GameObject.
 public class AmmoPack : MonoBehaviour
 {
-    public int AmmoCount
+    // Amount of ammo to give the player on pickup
+    public int ammoAmount = 10;
 
-    private void onTriggerEnter(Collider other)
+    // Triggers when player enters
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        // Only respond to the player
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entered the trigger");
+            // Adds ammo to the player's equipped weapon
+            other.gameObject.GetComponent<Character>().equippedWeapon.AmmoPickup(ammoAmount);
+            Debug.Log("Player picked up 10 ammo");
+
+            // Remove from game
+            Destroy(gameObject);
         }
-        Debug.Log(other.gameObject.name);
-    }
-
-    private void onTriggerStay(Collider other)
-    {
-        Debug.Log("OnTriggerStay");
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        Debug.Log("OnTriggerExit");
-    }
-    /// set up an OnTriggerEnter function
-    /// check if the collider has the "Player" tag
-    /// if it does access:
-    /// collider.gameObject.GetComponent<Character>().equippedWeapon.AmmoPickup(yourAmount);
-    /// make sure to delete the pack on pickup.
-    /// 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 }
