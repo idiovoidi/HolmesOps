@@ -12,6 +12,16 @@ public class AmmoPack : MonoBehaviour
         }
         Debug.Log(other.gameObject.name);
     }
+
+    private void onTriggerStay(Collider other)
+    {
+        Debug.Log("OnTriggerStay");
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log("OnTriggerExit");
+    }
     /// set up an OnTriggerEnter function
     /// check if the collider has the "Player" tag
     /// if it does access:
