@@ -142,7 +142,7 @@ public class Weapon : WeaponBehaviour
     #region Functions
     public override void AmmoPickup(int amount)
     {
-        // Adds pickup ammo amount, clamped so it never exceeds the limit
+        // Adds AmmoPickup amount, clamped so it never exceeds the limit
         reserveAmmo = Mathf.Clamp(reserveAmmo + amount, 0, GetReserveTotal());
 
         // Updates the UI with ammo count
