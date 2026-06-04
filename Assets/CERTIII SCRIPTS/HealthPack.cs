@@ -11,7 +11,7 @@ public class HealthPack : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Adds health to the Character's current Health
-            other.gameObject.GetComponent<Character>().ChangeCurrentHealth(HealthAdd);
+            other.gameObject.GetComponent<Character>().ChangeCurrentHealth(healthAdd);
             // Destroys object 
             Destroy(gameObject);
         }

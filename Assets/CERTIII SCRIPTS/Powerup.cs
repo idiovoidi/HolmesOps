@@ -18,7 +18,7 @@ public class Powerup : MonoBehaviour
         if (collider.gameObject.GetComponent<Character>() != null)
         {
             // Adds overhealth to the Character, allowing health to exceed maximum
-            collider.gameObject.GetComponent<Character>().ChangeCurrentHealth(PowerupValue);
+            collider.gameObject.GetComponent<Character>().ChangeCurrentHealth(powerupValue);
             // Destroys object 
             Destroy(gameObject);
         }
