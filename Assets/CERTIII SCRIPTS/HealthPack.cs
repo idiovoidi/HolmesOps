@@ -3,21 +3,16 @@ using UnityEngine;
 public class HealthPack : MonoBehaviour
 {
     private int HealthAdd = 10;
-    /// set up an OnTriggerEnter function
-    /// check if the collider has the "Player" tag
-    /// if it does access:
-    /// collider.gameObject.GetComponent<Character>().ChangeCurrentHealth(yourAmount);
-    /// make sure to delete the pack on pickup.
-    /// 
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    void Start()
+// Trigger for player tag
+    void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        if (other.CompareTag("Player"))
+        {
+            // Adds health to the Character's current Health
+            other.gameObject.GetComponent<Character>().ChangeCurrentHealth(HealthAdd);
+            // Destroys object 
+            Destroy(gameObject);
+        }
     }
 }
