@@ -3,7 +3,7 @@ using UnityEngine;
 public class HealthPack : MonoBehaviour
 {
     // Variable used to set amount of health added by the HealthPack upon pickup
-    private int HealthAdd = 10;
+    private int healthAdd = 10;
 
 // Trigger for player tag
     void OnTriggerEnter(Collider other)

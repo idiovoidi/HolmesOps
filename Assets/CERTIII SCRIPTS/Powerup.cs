@@ -4,9 +4,9 @@ public class Powerup : MonoBehaviour
 {
 
     // Value of the Powerup's effect
-    private int PowerupValue = 25;
+    private int powerupValue = 25;
     // Seconds the powerup is active
-    private int PowerupLifetime = 15;
+    private int powerupLifetime = 15;
     
     /// YOU NEED A VARIABLE FOR THE AMOUNT YOU ARE CHANGING AND ONE FOR THE AMOUNT OF
     /// TIME THE POWERUP IS ACTIVE FOR (POWERUP DEPENDING) 

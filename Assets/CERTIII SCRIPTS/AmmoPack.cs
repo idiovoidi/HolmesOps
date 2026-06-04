@@ -2,7 +2,7 @@ using UnityEngine;
 
 // Ammo pickup - Adds ammo to the player's equipped weapon on contact.
 
-public class AmmoPack : MonoBehaviour
+public class ammoPack : MonoBehaviour
 {
     // Amount of ammo to give the player on pickup
     public int ammoAmount = 10;
