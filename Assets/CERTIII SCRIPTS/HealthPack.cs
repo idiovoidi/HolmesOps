@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class HealthPack : MonoBehaviour
 {
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /// 
-    /// Variable for the amount of health to add
+    private int HealthAdd = 10;
     /// set up an OnTriggerEnter function
     /// check if the collider has the "Player" tag
     /// if it does access:
@@ -13,13 +11,11 @@ public class HealthPack : MonoBehaviour
     /// 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
