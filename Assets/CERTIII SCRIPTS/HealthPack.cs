@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class HealthPack : MonoBehaviour
 {
+    // Variable used to set amount of health added by the HealthPack upon pickup
     private int HealthAdd = 10;
 
 // Trigger for player tag
