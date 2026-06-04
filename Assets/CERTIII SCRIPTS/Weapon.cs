@@ -142,16 +142,11 @@ public class Weapon : WeaponBehaviour
     #region Functions
     public override void AmmoPickup(int amount)
     {
-        ////////////////////////////////////////////////////////////////////////////////////////
-        /// 
-        /// THIS IS WHERE YOU NEED TO PUT YOUR AMMO PICKUP FUNCTION.
-        /// YOU NEED TO UPDATE THE reserveAmmo VARIABLE, USE GetReserveTotal() TO
-        /// MAKE SURE YOU DON'T GO OVER THE LIMIT... MAKE SURE TO
-        /// HAVE THIS AS THE FINAL LINE OF YOUR FUNCTION IN ORDER TO UPDATE THE UI:
-        /// 
-        /// GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent, CheckReserve());
-        /// 
-        ////////////////////////////////////////////////////////////////////////////////////////
+        // Adds pickup ammo amount, clamped so it never exceeds the limit
+        reserveAmmo = Mathf.Clamp(reserveAmmo + amount, 0, GetReserveTotal());
+
+        // Updates the UI with ammo count
+        GameMan.Instance.gameUIInstance.UpdateAmmoCount(ammunitionCurrent, CheckReserve());
     }
     public override void EjectCasing()
     {
