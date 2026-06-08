@@ -118,6 +118,15 @@ public class GameMan : MonoBehaviour
 
         spawnManInstance.GameOver();
 
+        // Save the highscore
+        HighScore highScore = FindObjectOfType<HighScore>();
+        if (highScore != null)
+        {
+            highScore.playerName = "Player";
+            highScore.playerScore = gameUIInstance.currentScore;
+            highScore.SaveHighScore();
+        }
+
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
@@ -140,6 +149,15 @@ public class GameMan : MonoBehaviour
         winScreen.SetData(gameUIInstance.currentRound, gameUIInstance.currentScore);
         winScreen.SetCompletionTime(LevelCompletionTime);
         UiSystem.GetView<GameWinScreen>().SetCompletionTime(LevelCompletionTime);
+
+        // Save the highscore
+        HighScore highScore = FindObjectOfType<HighScore>();
+        if (highScore != null)
+        {
+            highScore.playerName = "Player";
+            highScore.playerScore = gameUIInstance.currentScore;
+            highScore.SaveHighScore();
+        }
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;

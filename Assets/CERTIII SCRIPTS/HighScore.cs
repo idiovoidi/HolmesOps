@@ -12,13 +12,8 @@ public class HighScore : MonoBehaviour
 
     void Start()
     {
-        // Set the file path 
+        // Set the file path to the persistent data folder
         filePath = Application.persistentDataPath + "/highscore.txt";
-
-        // TEST: Preset variables for quick testing
-        playerName = "TestPlayer";
-        playerScore = 140;
-        SaveHighScore();
     }
 
     // Save current score to .txt file
@@ -28,5 +23,4 @@ public class HighScore : MonoBehaviour
         File.WriteAllText(filePath, scoreText);
         Debug.Log("Highscore saved: " + scoreText);
     }
-
 }
