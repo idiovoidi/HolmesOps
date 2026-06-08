@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HighScore : MonoBehaviour
 {
-    // The score to save
+    // Score to save
     public int playerScore = 0;
     public string playerName = "Player";
 
@@ -15,14 +15,18 @@ public class HighScore : MonoBehaviour
         // Set the file path 
         filePath = Application.persistentDataPath + "/highscore.txt";
 
-        LoadHighScore();
+        // TEST: Preset variables for quick testing
+        playerName = "TestPlayer";
+        playerScore = 140;
+        SaveHighScore();
     }
 
-    // Save the current score to a .txt file
+    // Save current score to .txt file
     public void SaveHighScore()
     {
         string scoreText = playerName + " - " + playerScore;
         File.WriteAllText(filePath, scoreText);
         Debug.Log("Highscore saved: " + scoreText);
     }
+
 }
